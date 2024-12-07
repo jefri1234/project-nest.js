@@ -6,6 +6,6 @@ export class AuthController {
 
     @Get('/auth')
     auth(){
-        return 'Auth';
+        return 'MODULO AUTH';
     }
 }

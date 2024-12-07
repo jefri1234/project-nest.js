@@ -5,19 +5,14 @@ export class TaskController{
 
     //get viene de esa importacion 
     //cuando se visite la url de tipo get se ejecutara la funcion getAllTask
-    @Get('/task')
+    @Get('/api/task')
     getAllTask(){
         return "HERE Get all task for you";
     }
 
-    @Get('/')
+    @Get('/api/tasks')
     home(){
-        return "Welcome to home page";
+        return "MODULO TASK: listado de tasks";
     }
-
-    @Get('/products')
-    getProducts(){
-        return "HERE Get all products for you";
-        }
 
 }
