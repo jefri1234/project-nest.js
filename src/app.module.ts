@@ -11,10 +11,11 @@ import { ValidationModule } from './validation/validation.module';
 import { CourseModule } from './course/course.module';
 import { ProductsModule } from './products/products.module';
 import { HelloController } from './hello/hello.controller';
+import { PaymentModule } from './payment/payment.module';
 
 
 @Module({
-  imports: [TaskModule, AuthModule, ValidationModule, CourseModule, ProductsModule],
+  imports: [TaskModule, AuthModule, ValidationModule, CourseModule, ProductsModule, PaymentModule],
   controllers: [HelloController],
 
 })
