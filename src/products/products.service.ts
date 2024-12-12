@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { PrismaService } from 'src/prisma.service';
 
 //crear una interfaz para productos
 export interface Producto{
@@ -9,29 +10,17 @@ export interface Producto{
 
 @Injectable()
 export class ProductsService {
+    //constructor paara usar prisma 
+    constructor(private prisma: PrismaService) {}
 
-    private productos=[1,2,3]
-
-    private products = [
-        {
-            id: 1, name: 'Product 1', price: 10.99
-        },
-        {
-            id: 2, name: 'Product 2', price: 9.99
-        },
-        {
-            id: 3, name: 'Product 3', price: 10.99
-        }
-    ];
     //el (:Productos) decimos para validad datos le pasamos una interfaz
     //tambien pasarle(:int , boolean , object , array ,string)
-    getProduct(){                 
-        return this.productos
+    getProduct(){      
+        //realizacion de una consulta to my db with prisma            
+        return this.prisma.products.findMany()
     }
     createProduct(product:any){
-        //guardar en el areglo
-        this.productos.push(product);
-        return {data:"dato creado"}
+        return this.prisma.products.create({data:product})
     }
     updateProduct(){
         return "product update in my service the products code "

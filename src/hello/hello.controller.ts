@@ -5,11 +5,11 @@ import { Request,Response } from 'express';
 @Controller()
 export class HelloController {
 
-    @Get('/home')
+    @Get('/')
     index(@Req() request: Request, @Res() response:Response   ) {
         console.log(request.url)
         response.status(200).json({
-            message: 'Hello World',         
+            message: 'ROUTE HOME',         
         })
     }
 }
