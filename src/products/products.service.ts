@@ -25,4 +25,16 @@ export class ProductsService {
     updateProduct(){
         return "product update in my service the products code "
     }
+
+    deleteProduct(id:any){
+        console.log("el valor de delete es: ",typeof(id))
+        //funcion para elimionar un registro
+
+        return this.prisma.products.delete({
+            where:{
+                id:id
+            }
+        })
+        
+    }
 } 

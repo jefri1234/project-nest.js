@@ -1,4 +1,4 @@
-//creando un servicio para PRISMA ORM 
+//creando un servicio conexion para PRISMA ORM 
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
 

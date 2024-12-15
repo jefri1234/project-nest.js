@@ -1,6 +1,7 @@
-import { Body, Controller, Get, Param, ParseIntPipe, Post, Put, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, Query} from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { CreateProductDto } from './dto/create-product.dto';
 
 @Controller('/api/products')
 
@@ -28,7 +29,7 @@ export class ProductsController {
 
     @Post()
     @ApiOperation({summary:"create an new product"})
-    createProduct(@Body() product:any){
+    createProduct(@Body() product:CreateProductDto){
         return this.productService.createProduct(product);
     }
     @Put()
@@ -37,4 +38,9 @@ export class ProductsController {
         return this.productService.updateProduct();
     }
 
+    @Delete('/:id')
+    @ApiOperation({summary:"update an existing product"})
+    deleteProduct(@Param('id',ParseIntPipe) id:any){
+        return this.productService.deleteProduct(id);
+    }
 }
