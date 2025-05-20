@@ -1,16 +1,11 @@
 //Traendo unos decoradores
-import {
-    IsString,
-    IsNumber,
-    MinLength
-} from 'class-validator'
+import { IsString, IsNumber, MinLength } from 'class-validator';
 
-export class CreateProductDto{
+export class CreateProductDto {
+  @IsString()
+  @MinLength(4)
+  name: string;
 
-    @IsString()
-    @MinLength(4)
-    name:string
-
-    @IsNumber()
-    price:number
+  @IsNumber()
+  price: number;
 }

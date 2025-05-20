@@ -8,7 +8,6 @@ import { PrismaService } from 'src/prisma.service';
   controllers: [ProductsController],
 
   //un modulo puede tener varios servicios
-  providers: [ProductsService,PrismaService]
+  providers: [ProductsService, PrismaService],
 })
 export class ProductsModule {}
- 
