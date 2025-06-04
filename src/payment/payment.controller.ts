@@ -13,6 +13,7 @@ import { UpdatePaymentDto } from './dto/update-payment.dto';
 
 @Controller('payment')
 export class PaymentController {
+  //este constructor injecta el servicio de pago para manejar las operaciones de pago
   constructor(private readonly paymentService: PaymentService) {}
 
   @Post()

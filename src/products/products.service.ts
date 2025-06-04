@@ -22,7 +22,7 @@ export class ProductsService {
   createProduct(product: any) {
     return this.prisma.products.create({ data: product });
   }
-  updateProduct() {
+  updateProduct(id:number,producto:{name: string, price: number}) {
     return 'product update in my service the products code ';
   }
 
